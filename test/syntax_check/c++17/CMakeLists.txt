@@ -156,6 +156,7 @@ target_sources(t17 PRIVATE etl_profile.h
         ../frame_check_sequence.h.t.cpp
         ../fsm.h.t.cpp
         ../function.h.t.cpp
+        ../function_wrapper.h.t.cpp
         ../functional.h.t.cpp
         ../gamma.h.t.cpp
         ../gcd.h.t.cpp
