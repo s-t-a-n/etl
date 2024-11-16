@@ -793,6 +793,25 @@ namespace etl
     }
 
     //*************************************************************************
+    /// Extracts the root node from the list, effectively clearing the list without altering links.
+    /// Returns a pointer to the extracted root node.
+    //*************************************************************************
+    pointer detach()
+    {
+      auto head = this->get_head();
+      while (head->etl_next != &this->terminator)
+        head = head->etl_next;
+      head->etl_next = nullptr;
+
+      pointer root = static_cast<pointer>(this->get_head());
+      this->start.etl_next = &this->terminator;
+      this->current_size = 0;
+
+      return root;
+    }
+
+
+    //*************************************************************************
     /// Removes all but the one element from every consecutive group of equal
     /// elements in the container.
     //*************************************************************************
